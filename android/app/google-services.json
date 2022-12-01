@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297287350283",
+    "project_id": "jamur-aja",
+    "storage_bucket": "jamur-aja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297287350283:android:80ca4cf8acc0f52dfcaf0e",
+        "android_client_info": {
+          "package_name": "com.example.blank_fire_setstate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297287350283-gikqcfa85atcjqbvmb157g8pvqshuhu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7vH-S5MfyVr6l-phJbY8S16qf3jL7JLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297287350283-gikqcfa85atcjqbvmb157g8pvqshuhu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
