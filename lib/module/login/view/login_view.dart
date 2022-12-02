@@ -93,7 +93,7 @@ class LoginView extends StatefulWidget {
                               onChanged: (value) => controller.setValue(value),
                             ),
                           ),
-                          const SizedBox(width: 10.0),
+                          const SizedBox(width: 5.0),
                           const Text(
                             "Stay Sign in",
                             style: TextStyle(
