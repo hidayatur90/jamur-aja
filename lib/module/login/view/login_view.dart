@@ -18,8 +18,8 @@ class LoginView extends StatefulWidget {
           children: [
             Image.asset(
               "images/logo-app.png",
-              width: 260.0,
-              height: 130.0,
+              width: 280.0,
+              height: 150.0,
               fit: BoxFit.fill,
             ),
             Text(
@@ -74,8 +74,34 @@ class LoginView extends StatefulWidget {
                       const SizedBox(
                         width: 10.0,
                       ),
-                      const SizedBox(
-                        height: 10.0,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 50.0,
+                            width: 24.0,
+                            child: Checkbox(
+                              checkColor: Colors.white,
+                              activeColor: Colors.amberAccent,
+                              side: MaterialStateBorderSide.resolveWith(
+                                (states) => const BorderSide(
+                                  width: 2.0,
+                                  color: Colors.amberAccent,
+                                ),
+                              ),
+                              value: controller.condition,
+                              onChanged: (value) => controller.setValue(value),
+                            ),
+                          ),
+                          const SizedBox(width: 10.0),
+                          const Text(
+                            "Stay Sign in",
+                            style: TextStyle(
+                              fontSize: 13.0,
+                              fontFamily: 'Red Hat Display',
+                            ),
+                          )
+                        ],
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,

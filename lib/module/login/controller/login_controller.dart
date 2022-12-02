@@ -17,4 +17,9 @@ class LoginController extends State<LoginView> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  bool condition = false;
+  setValue(value) {
+    setState(() => condition = value);
+  }
 }

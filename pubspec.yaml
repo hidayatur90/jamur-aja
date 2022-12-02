@@ -82,10 +82,10 @@ flutter:
   fonts:
     - family: Red Hat Display
       fonts:
-        # - asset: fonts/Red Hat Display/RedHatDisplay-VariableFont_wght.ttf
-        # - asset: fonts/Red Hat Display/RedHatDisplay-Italic-VariableFont_wght.ttf
-        #   style: italic
-        - asset: fonts/Red Hat Display/RedHatDisplay-Bold.ttf
+        - asset: fonts/Red Hat Display/RedHatDisplay-VariableFont_wght.ttf
+        - asset: fonts/Red Hat Display/RedHatDisplay-Italic-VariableFont_wght.ttf
+          style: italic
+        # - asset: fonts/Red Hat Display/RedHatDisplay-Bold.ttf
     - family: Poppins
       fonts:
         - asset: fonts/Poppins/Poppins-ExtraBold.ttf
