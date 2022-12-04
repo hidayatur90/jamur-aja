@@ -129,7 +129,9 @@ class LoginView extends StatefulWidget {
                                   borderRadius: BorderRadius.circular(7.0),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                controller.diaogLogin();
+                              },
                               child: const Text(
                                 "LOGIN",
                                 style: TextStyle(

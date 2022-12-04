@@ -22,4 +22,8 @@ class LoginController extends State<LoginView> implements MvcController {
   setValue(value) {
     setState(() => condition = value);
   }
+
+  diaogLogin() async {
+    // const HDAlertDialog();
+  }
 }
