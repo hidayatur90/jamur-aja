@@ -1,55 +1,66 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-typedef AlertAction<T> = void Function(T index);
-
-class HDAlertDialog {
-  HDAlertDialog(
-      {required this.cancelTitle,
-      this.alertTitle = 'Alert',
-      this.alertDetailMessage = '',
-      required this.alertActionTitles,
-      required this.onAlertAction});
-  String alertTitle;
-  String alertDetailMessage;
-  String cancelTitle;
-  List<String> alertActionTitles;
-  AlertAction<int> onAlertAction;
-
-  void show(BuildContext context) {
-    List<Widget> actions = <Widget>[];
-    //Customize the cancel button as per the requirement
-    Widget actionButton = TextButton(
-      child: Text(cancelTitle),
-      onPressed: () {
-        Navigator.pop(context);
-      },
-    );
-    actions.add(actionButton);
-    for (int i = 0; i < alertActionTitles.length; i++) {
-      Widget actionButton = TextButton(
-        child: Text(alertActionTitles[i]),
-        onPressed: () {
-          Navigator.pop(context);
-          onAlertAction(i);
-        },
+Future HDShowInfoDialog(
+  BuildContext context,
+  String info,
+  String message,
+  String textButton,
+) async {
+  await showDialog<void>(
+    context: context,
+    barrierDismissible: true,
+    builder: (BuildContext context) {
+      return SizedBox(
+        height: 20.0,
+        child: AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18.0),
+          ),
+          title: Text(
+            info,
+            style: const TextStyle(
+              fontFamily: 'Red Hat Display',
+              color: Colors.amberAccent,
+            ),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Center(
+                  child: Text(
+                    message,
+                    style: const TextStyle(
+                      fontFamily: 'Red Hat Display',
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            SizedBox(
+              width: 100,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: HexColor('#FFDE5B'),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  textButton,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       );
-      actions.add(actionButton);
-    }
-    Widget _getAlertDialog(List<Widget> actions) {
-      if (Platform.isIOS) {
-        return CupertinoAlertDialog(
-            title: Text(alertTitle),
-            content: Text(alertDetailMessage),
-            actions: actions);
-      } else {
-        return AlertDialog(
-            title: Text(alertTitle),
-            content: Text(alertDetailMessage),
-            actions: actions);
-      }
-    }
-  }
+    },
+  );
 }

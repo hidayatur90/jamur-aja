@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fhe_template/state_util.dart';
+import '../../../widget/dialog.dart';
+import '../../register/view/register_view.dart';
 import '../view/login_view.dart';
 
 class LoginController extends State<LoginView> implements MvcController {
@@ -23,7 +25,16 @@ class LoginController extends State<LoginView> implements MvcController {
     setState(() => condition = value);
   }
 
+  moveToRegiter() async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const RegisterView(),
+      ),
+    );
+  }
+
   diaogLogin() async {
-    // const HDAlertDialog();
+    await HDShowInfoDialog(context, "Pesan", "Login Berhasil", "OK");
   }
 }

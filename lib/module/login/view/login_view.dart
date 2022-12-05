@@ -83,7 +83,10 @@ class LoginView extends StatefulWidget {
                           const SizedBox(
                             height: 10.0,
                           ),
-                          const HDTextFieldForm(hintText: 'Password'),
+                          const HDTextFieldForm(
+                            hintText: 'Password',
+                            obscureText: true,
+                          ),
                           const SizedBox(
                             width: 10.0,
                           ),
@@ -165,11 +168,7 @@ class LoginView extends StatefulWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterView()),
-                        );
+                        controller.moveToRegiter();
                       },
                       child: Text(
                         "Buat Akun",

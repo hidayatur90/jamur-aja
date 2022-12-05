@@ -3,9 +3,13 @@ import 'package:hexcolor/hexcolor.dart';
 
 class HDTextFieldForm extends StatefulWidget {
   final String hintText;
+  final bool? obscureText;
+  final int? maxLines;
   const HDTextFieldForm({
     Key? key,
     required this.hintText,
+    this.maxLines,
+    this.obscureText,
   }) : super(key: key);
 
   @override
@@ -16,7 +20,7 @@ class _HDTextFieldFormState extends State<HDTextFieldForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
+      // height: 40,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           blurRadius: 10,
@@ -26,6 +30,8 @@ class _HDTextFieldFormState extends State<HDTextFieldForm> {
         )
       ]),
       child: TextFormField(
+        maxLines: widget.maxLines ?? 1,
+        obscureText: widget.obscureText ?? false,
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,

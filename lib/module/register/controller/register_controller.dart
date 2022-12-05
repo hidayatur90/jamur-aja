@@ -4,8 +4,8 @@ import '../view/register_view.dart';
 
 class RegisterController extends State<RegisterView> implements MvcController {
   static late RegisterController instance;
+  late int joko = 0;
   late RegisterView view;
-
   @override
   void initState() {
     instance = this;
@@ -17,4 +17,9 @@ class RegisterController extends State<RegisterView> implements MvcController {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  bool condition = false;
+  setValue(value) {
+    setState(() => joko = (value as int?)!);
+  }
 }

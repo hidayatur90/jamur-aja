@@ -1,5 +1,9 @@
+import 'package:fhe_template/widget/form_username.dart';
+import 'package:fhe_template/widget/textPoppins.dart';
 import 'package:flutter/material.dart';
 import 'package:fhe_template/core.dart';
+import 'package:hexcolor/hexcolor.dart';
+import '../../../widget/textRedHatDisplay.dart';
 import '../controller/register_controller.dart';
 
 class RegisterView extends StatefulWidget {
@@ -10,15 +14,122 @@ class RegisterView extends StatefulWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Register"),
+        leading: IconButton(
+          icon: const Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
+          ),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor: HexColor('#FFDE5B'),
+        title: Text(
+          "Buat Akun",
+          style: TextStyle(
+            fontSize: 24,
+            fontFamily: 'Red Hat Display',
+            color: HexColor('#2F4545'),
+          ),
+        ),
         actions: const [],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: const [],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 1.0,
+            ),
+            const HDRedHatDisplay(
+                text: 'Lengkapi data diri Anda', fontSize: 18),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const HDTextFieldForm(hintText: 'Nama Lengkap'),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: const [
+                Expanded(child: HDTextFieldForm(hintText: 'Tanggal Lahir')),
+                SizedBox(
+                  width: 8.0,
+                ),
+                Expanded(child: HDTextFieldForm(hintText: 'Foto')),
+              ],
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const HDRedHatDisplay(text: 'Jenis Kelamin', fontSize: 18),
+            Row(
+              children: [
+                Expanded(
+                  child: ListTile(
+                    title:
+                        const HDRedHatDisplay(text: 'Laki-laki', fontSize: 16),
+                    leading: Radio(
+                      value: 1,
+                      groupValue: controller.joko,
+                      onChanged: (value) => controller.setValue(value),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListTile(
+                    title:
+                        const HDRedHatDisplay(text: 'Perempuan', fontSize: 16),
+                    leading: Radio(
+                      value: 2,
+                      groupValue: controller.joko,
+                      onChanged: (value) => controller.setValue(value),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const HDTextFieldForm(
+              hintText: 'Alamat',
+              maxLines: 5,
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const HDRedHatDisplay(text: 'Username & Password', fontSize: 18),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const HDTextFieldForm(hintText: 'Username'),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const HDTextFieldForm(
+              hintText: 'Password',
+              obscureText: true,
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  width: 150,
+                  height: 40,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: HexColor('#FFDE59'),
+                    ),
+                    onPressed: () {},
+                    child: const HDPoppins(text: 'DAFTAR', fontSize: 15),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
