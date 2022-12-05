@@ -4,7 +4,8 @@ import '../view/register_view.dart';
 
 class RegisterController extends State<RegisterView> implements MvcController {
   static late RegisterController instance;
-  late int joko = 0;
+  DateTime date = DateTime(2022, 12, 24);
+  late int radio = 0;
   late RegisterView view;
   @override
   void initState() {
@@ -20,6 +21,10 @@ class RegisterController extends State<RegisterView> implements MvcController {
 
   bool condition = false;
   setValue(value) {
-    setState(() => joko = (value as int?)!);
+    setState(() => radio = (value as int?)!);
+  }
+
+  setValueDate(date) {
+    setState(() => condition = date);
   }
 }

@@ -8,7 +8,6 @@ import '../controller/register_controller.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
-
   Widget build(context, RegisterController controller) {
     controller.view = this;
 
@@ -52,13 +51,46 @@ class RegisterView extends StatefulWidget {
             const SizedBox(
               height: 10.0,
             ),
+            Text(
+              controller.date.toString(),
+              style: const TextStyle(
+                fontSize: 10.0,
+              ),
+            ),
             Row(
-              children: const [
-                Expanded(child: HDTextFieldForm(hintText: 'Tanggal Lahir')),
-                SizedBox(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    // controller: controller.date.toString(),
+                    initialValue: controller.date.toString(),
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.calendar_month),
+                      hintText: 'Tanggal Lahir',
+                    ),
+                    onChanged: (value) {
+                      controller.setState(() {
+                        value = controller.date.toString();
+                      });
+                    },
+                    onTap: () async {
+                      DateTime? pickDate = await showDatePicker(
+                        context: context,
+                        initialDate: controller.date,
+                        firstDate: DateTime(2000),
+                        lastDate: DateTime(2099),
+                      );
+                      if (pickDate == null) return;
+
+                      controller.setState(() {
+                        controller.date = pickDate;
+                      });
+                    },
+                  ),
+                ),
+                const SizedBox(
                   width: 8.0,
                 ),
-                Expanded(child: HDTextFieldForm(hintText: 'Foto')),
+                const Expanded(child: HDTextFieldForm(hintText: 'Foto')),
               ],
             ),
             const SizedBox(
@@ -73,7 +105,7 @@ class RegisterView extends StatefulWidget {
                         const HDRedHatDisplay(text: 'Laki-laki', fontSize: 16),
                     leading: Radio(
                       value: 1,
-                      groupValue: controller.joko,
+                      groupValue: controller.radio,
                       onChanged: (value) => controller.setValue(value),
                     ),
                   ),
@@ -84,7 +116,7 @@ class RegisterView extends StatefulWidget {
                         const HDRedHatDisplay(text: 'Perempuan', fontSize: 16),
                     leading: Radio(
                       value: 2,
-                      groupValue: controller.joko,
+                      groupValue: controller.radio,
                       onChanged: (value) => controller.setValue(value),
                     ),
                   ),
