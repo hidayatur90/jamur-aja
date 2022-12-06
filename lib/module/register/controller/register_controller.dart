@@ -27,4 +27,12 @@ class RegisterController extends State<RegisterView> implements MvcController {
   setValueDate(date) {
     setState(() => condition = date);
   }
+
+  // onChangedDate(){
+
+  //                     setState(() {
+  //                       value = controller.date.toString();
+  //                     });
+  //                   },
+  // }
 }

@@ -1,5 +1,6 @@
 import 'package:fhe_template/widget/form_username.dart';
 import 'package:fhe_template/widget/textPoppins.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fhe_template/core.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -67,11 +68,6 @@ class RegisterView extends StatefulWidget {
                       prefixIcon: Icon(Icons.calendar_month),
                       hintText: 'Tanggal Lahir',
                     ),
-                    onChanged: (value) {
-                      controller.setState(() {
-                        value = controller.date.toString();
-                      });
-                    },
                     onTap: () async {
                       DateTime? pickDate = await showDatePicker(
                         context: context,
@@ -80,7 +76,6 @@ class RegisterView extends StatefulWidget {
                         lastDate: DateTime(2099),
                       );
                       if (pickDate == null) return;
-
                       controller.setState(() {
                         controller.date = pickDate;
                       });
@@ -90,7 +85,36 @@ class RegisterView extends StatefulWidget {
                 const SizedBox(
                   width: 8.0,
                 ),
-                const Expanded(child: HDTextFieldForm(hintText: 'Foto')),
+                Expanded(
+                  child: TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Name',
+                        labelStyle: TextStyle(
+                          color: Colors.blueGrey,
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.blueGrey,
+                          ),
+                        ),
+                        helperText: "What's your name?",
+                      ),
+                      onChanged: (value) {},
+                      onTap: () async {
+                        FilePickerResult? result =
+                            await FilePicker.platform.pickFiles(
+                          allowMultiple: true,
+                          type: FileType.image,
+                        );
+                        // if (file != null) {
+                        //   for (String? path in result.paths) {
+                        //     File file = File(path!);
+                        //     _images.add(file);
+                        //   }
+                        //   // Here your onChanged() function is returning just one image
+                        // }
+                      }),
+                ),
               ],
             ),
             const SizedBox(

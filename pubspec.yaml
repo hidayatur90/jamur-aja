@@ -41,6 +41,7 @@ dependencies:
   firebase_messaging: ^13.0.3
   cloud_firestore: ^3.4.9
   hexcolor: ^3.0.1
+  file_picker: ^5.2.3
   
 dev_dependencies:
   flutter_test:
