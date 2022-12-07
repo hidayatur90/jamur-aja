@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fhe_template/core.dart';
 import 'package:hexcolor/hexcolor.dart';
+import '../../../widget/dialog.dart';
 import '../../../widget/textRedHatDisplay.dart';
 import '../controller/register_controller.dart';
 
@@ -52,12 +53,12 @@ class RegisterView extends StatefulWidget {
             const SizedBox(
               height: 10.0,
             ),
-            Text(
-              controller.date.toString(),
-              style: const TextStyle(
-                fontSize: 10.0,
-              ),
-            ),
+            // Text(
+            //   controller.date.toString(),
+            //   style: const TextStyle(
+            //     fontSize: 10.0,
+            //   ),
+            // ),
             Row(
               children: [
                 Expanded(
@@ -88,16 +89,7 @@ class RegisterView extends StatefulWidget {
                 Expanded(
                   child: TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Name',
-                        labelStyle: TextStyle(
-                          color: Colors.blueGrey,
-                        ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.blueGrey,
-                          ),
-                        ),
-                        helperText: "What's your name?",
+                        labelText: 'Foto',
                       ),
                       onChanged: (value) {},
                       onTap: () async {
@@ -179,8 +171,11 @@ class RegisterView extends StatefulWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: HexColor('#FFDE59'),
                     ),
-                    onPressed: () {},
                     child: const HDPoppins(text: 'DAFTAR', fontSize: 15),
+                    onPressed: () {
+                      HDShowInfoDialog(
+                          context, "Pesan", "Daftar Berhasil", "OK");
+                    },
                   ),
                 ),
               ],

@@ -1,8 +1,5 @@
+import 'package:fhe_template/core.dart';
 import 'package:flutter/material.dart';
-import 'package:fhe_template/state_util.dart';
-import '../../../widget/dialog.dart';
-import '../../register/view/register_view.dart';
-import '../view/login_view.dart';
 
 class LoginController extends State<LoginView> implements MvcController {
   static late LoginController instance;
@@ -35,6 +32,10 @@ class LoginController extends State<LoginView> implements MvcController {
   }
 
   diaogLogin() async {
-    await HDShowInfoDialog(context, "Pesan", "Login Berhasil", "OK");
+    // await HDShowInfoDialog(context, "Pesan", "Login Berhasil", "OK");
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const DashboardView()),
+    );
   }
 }

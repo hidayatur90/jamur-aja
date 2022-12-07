@@ -1,6 +1,7 @@
 {
     "modules": [
         "register",
-        "login"
+        "login",
+        "dashboard"
     ]
 }

@@ -10,6 +10,7 @@ class LoginView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
+      // drawer: Bar.side(),
       backgroundColor: HexColor('#FFDE5B'),
       body: Stack(
         children: [
