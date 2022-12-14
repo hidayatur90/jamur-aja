@@ -14,6 +14,7 @@ class HDFontFamily {
     this.color,
   });
 
+  // Red Hat Display
   RedHatDisplay() {
     return Text(
       title,
@@ -38,7 +39,8 @@ class HDFontFamily {
     );
   }
 
-  PoppinsBold() {
+  // Poppins
+  Poppins() {
     return Text(
       title,
       style: TextStyle(
@@ -48,6 +50,38 @@ class HDFontFamily {
     );
   }
 
+  PoppinsBold() {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: fontSize,
+        fontFamily: 'Poppins Bold',
+      ),
+    );
+  }
+
+  // Work Sans
+  WorkSans() {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: fontSize,
+        fontFamily: 'Work Sans',
+      ),
+    );
+  }
+
+  WorkSansBold() {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: fontSize,
+        fontFamily: 'Work Sans Bold',
+      ),
+    );
+  }
+
+  // Default
   Default() {
     return Text(
       title,

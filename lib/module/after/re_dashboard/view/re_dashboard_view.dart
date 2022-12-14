@@ -1,9 +1,10 @@
+import 'package:fhe_template/module/after/shared/font-family.dart';
 import 'package:flutter/material.dart';
 import 'package:fhe_template/core.dart';
 import 'package:hexcolor/hexcolor.dart';
-import '../../shared/font-family.dart';
 import '../../shared/hex-colors.dart';
 import '../controller/re_dashboard_controller.dart';
+import '../widget/sidebar.dart';
 
 class ReDashboardView extends StatefulWidget {
   const ReDashboardView({Key? key}) : super(key: key);
@@ -12,13 +13,27 @@ class ReDashboardView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
+      backgroundColor: HDColor().colorPrimary(),
+      drawer: NavDrawer(),
       appBar: AppBar(
-        title: HDFontFamily(
-          title: 'Dashboard',
-          fontSize: 24.0,
-          color: HDColor().colorFontSemiDark(),
-        ).RedHatDisplayBold(),
-        backgroundColor: HexColor('#FFDE5B'),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Image.asset(
+                "assets/icons/sidebar-icon.png",
+                width: 30.0,
+                height: 17.0,
+                fit: BoxFit.fill,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
+        backgroundColor: HDColor().colorPrimary(),
+        elevation: 0.0,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
@@ -33,13 +48,12 @@ class ReDashboardView extends StatefulWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: const [],
-          ),
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          HDFontFamily(title: 'Budidaya', fontSize: 48).WorkSans(),
+          HDFontFamily(title: 'Jamur Rezeki', fontSize: 48).WorkSansBold(),
+        ],
       ),
     );
   }

@@ -1,7 +1,8 @@
-import 'package:fhe_template/module/login/view/login_view.dart';
 import 'package:fhe_template/setup.dart';
 import 'package:fhe_template/state_util.dart';
 import 'package:flutter/material.dart';
+
+import 'module/after/re_dashboard/view/re_dashboard_view.dart';
 
 void main() async {
   await initialize();
@@ -15,7 +16,7 @@ void main() async {
         primarySwatch: Colors.blueGrey,
       ),
       // home: const LoginView(),
-      home: const ReLoginView(),
+      home: const ReDashboardView(),
     ),
   );
 }

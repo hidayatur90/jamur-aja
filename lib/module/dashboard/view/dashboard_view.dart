@@ -10,7 +10,7 @@ class DashboardView extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      drawer: Bar.side(),
+      drawer: HDSideBar.side(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text("Dashboard"),

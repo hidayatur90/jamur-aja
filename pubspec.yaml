@@ -67,8 +67,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/logo-app.png
-    - images/bg-mid.png
+    - assets/images/logo-app.png
+    - assets/images/bg-mid.png
+    - assets/images/logo-with-opacity.png
+    - assets/icons/sidebar-icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -82,15 +84,30 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    # Red Hat Display
     - family: Red Hat Display
       fonts:
         - asset: fonts/Red Hat Display/RedHatDisplay-VariableFont_wght.ttf
-        - asset: fonts/Red Hat Display/RedHatDisplay-Italic-VariableFont_wght.ttf
-          style: italic
-        # - asset: fonts/Red Hat Display/RedHatDisplay-Bold.ttf
+    - family: Red Hat Display Bold
+      fonts:
+        - asset: fonts/Red Hat Display/RedHatDisplay-Bold.ttf
+
+    # Poppins
     - family: Poppins
       fonts:
+        - asset: fonts/Poppins/Poppins-Black.ttf
+
+    - family: Poppins Bold
+      fonts:
         - asset: fonts/Poppins/Poppins-ExtraBold.ttf
+
+    # Work Sans
+    - family: Work Sans
+      fonts:
+        - asset: fonts/Work Sans/WorkSans-Regular.ttf
+    - family: Work Sans Bold
+      fonts:
+        - asset: fonts/Work Sans/WorkSans-Bold.ttf
 
   #
   # For details regarding fonts from package dependencies,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Bar {
+class HDSideBar {
   static side() {
     Widget _buildDrawer() {
       return SizedBox(
