@@ -87,7 +87,7 @@ flutter:
     # Red Hat Display
     - family: Red Hat Display
       fonts:
-        - asset: fonts/Red Hat Display/RedHatDisplay-VariableFont_wght.ttf
+        - asset: fonts/Red Hat Display/RedHatDisplay-Regular.ttf
     - family: Red Hat Display Bold
       fonts:
         - asset: fonts/Red Hat Display/RedHatDisplay-Bold.ttf
@@ -95,11 +95,11 @@ flutter:
     # Poppins
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins/Poppins-Black.ttf
+        - asset: fonts/Poppins/Poppins-Regular.ttf
 
     - family: Poppins Bold
       fonts:
-        - asset: fonts/Poppins/Poppins-ExtraBold.ttf
+        - asset: fonts/Poppins/Poppins-Bold.ttf
 
     # Work Sans
     - family: Work Sans

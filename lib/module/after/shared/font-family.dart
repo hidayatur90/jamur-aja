@@ -31,9 +31,9 @@ class HDFontFamily {
       title,
       style: TextStyle(
         fontSize: fontSize,
-        fontFamily: 'Red Hat Display',
+        fontFamily: 'Red Hat Display Bold',
         color: color,
-        fontWeight: FontWeight.bold,
+        // fontWeight: FontWeight.bold,
         shadows: shadow,
       ),
     );

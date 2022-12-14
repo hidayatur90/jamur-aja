@@ -38,9 +38,9 @@ class ReDashboardView extends StatefulWidget {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-              onPressed: () => controller.moveToProfil(),
+              onPressed: () => controller.moveToInfo(),
               icon: Icon(
-                Icons.person,
+                Icons.info_outline,
                 size: 24.0,
                 color: HexColor('#2F4545'),
               ),
@@ -53,6 +53,133 @@ class ReDashboardView extends StatefulWidget {
         children: [
           HDFontFamily(title: 'Budidaya', fontSize: 48).WorkSans(),
           HDFontFamily(title: 'Jamur Rezeki', fontSize: 48).WorkSansBold(),
+          HDFontFamily(
+                  title:
+                      'Menjual olahan Jamur tiram, sedap, sehat dan halal. Tersedia dalam berbagai rasa.  Pesan Sekarang !',
+                  fontSize: 15.0)
+              .WorkSans(),
+          const SizedBox(
+            height: 20.0,
+          ),
+          SizedBox(
+            height: 300.0,
+            child: ListView.builder(
+              itemCount: 5,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Row(
+                  children: [
+                    const SizedBox(
+                      width: 10.0,
+                    ),
+                    SizedBox(
+                      width: 300.0,
+                      height: 300.0,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9.0),
+                        ),
+                        color: HDColor().colorFontLight(),
+                      ),
+                    )
+                  ],
+                );
+              },
+            ),
+          ),
+          const SizedBox(
+            height: 3.0,
+          ),
+          Expanded(
+            child: Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: MaterialButton(
+                  onPressed: () => {},
+                  // text
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 70.0,
+                      width: 300.0,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9.0),
+                        ),
+                        color: HDColor().colorFontLight(),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 2.0,
+                            bottom: 2.0,
+                            left: 8.0,
+                            right: 8.0,
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(
+                                        Icons.card_travel,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        HDFontFamily(
+                                                title: 'Status ',
+                                                fontSize: 12.0)
+                                            .WorkSansBold(),
+                                        HDFontFamily(
+                                                title: 'Pesanan',
+                                                fontSize: 12.0)
+                                            .WorkSans(),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 8.0,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(
+                                        Icons.card_travel,
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        HDFontFamily(
+                                                title: 'Riwayat ',
+                                                fontSize: 12.0)
+                                            .WorkSansBold(),
+                                        HDFontFamily(
+                                                title: 'Pesanan',
+                                                fontSize: 12.0)
+                                            .WorkSans(),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
+            ),
+          ),
         ],
       ),
     );
