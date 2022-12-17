@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fhe_template/core.dart';
 import '../../shared/button.dart';
 import '../../shared/hex-colors.dart';
-import '../controller/re_login_controller.dart';
+import '../controller/re_login_controller.dart'; 
 
 class ReLoginView extends StatefulWidget {
   const ReLoginView({Key? key}) : super(key: key);
