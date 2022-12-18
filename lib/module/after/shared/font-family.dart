@@ -99,7 +99,7 @@ class HDFontFamily {
         fontSize: fontSize,
         fontWeight: FontWeight.bold,
         decoration: TextDecoration.underline,
-      ),
+      ), 
     );
   }
 }
