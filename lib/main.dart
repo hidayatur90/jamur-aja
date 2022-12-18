@@ -16,7 +16,7 @@ void main() async {
         primarySwatch: Colors.blueGrey,
       ),
       // home: const LoginView(),
-      home: const ReDashboardView(),
+      home: const ReLoginView(),
     ),
   );
 }
