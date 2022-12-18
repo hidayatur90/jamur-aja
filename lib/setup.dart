@@ -14,7 +14,7 @@ Future initialize() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb && !Platform.isWindows) {
     await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+      options: DefaultFirebaseOptions.currentPlatform, 
     );
   }
 }
