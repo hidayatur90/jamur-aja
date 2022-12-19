@@ -102,7 +102,7 @@ flutter:
         - asset: fonts/Poppins/Poppins-Bold.ttf
 
     # Work Sans
-    - family: Work Sans
+    - family: Work Sans 
       fonts:
         - asset: fonts/Work Sans/WorkSans-Regular.ttf
     - family: Work Sans Bold
