@@ -85,26 +85,31 @@ flutter:
   # example:
   fonts:
     # Red Hat Display
+    # Regular
     - family: Red Hat Display
       fonts:
         - asset: fonts/Red Hat Display/RedHatDisplay-Regular.ttf
+    # Bold
     - family: Red Hat Display Bold
       fonts:
         - asset: fonts/Red Hat Display/RedHatDisplay-Bold.ttf
 
     # Poppins
+    # Regular
     - family: Poppins
       fonts:
         - asset: fonts/Poppins/Poppins-Regular.ttf
-
+    # Bold
     - family: Poppins Bold
       fonts:
         - asset: fonts/Poppins/Poppins-Bold.ttf
 
     # Work Sans
+    # Regular
     - family: Work Sans 
       fonts:
         - asset: fonts/Work Sans/WorkSans-Regular.ttf
+    # Bold
     - family: Work Sans Bold
       fonts:
         - asset: fonts/Work Sans/WorkSans-Bold.ttf
