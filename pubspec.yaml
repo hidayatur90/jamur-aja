@@ -111,7 +111,7 @@ flutter:
         - asset: fonts/Work Sans/WorkSans-Regular.ttf
     # Bold
     - family: Work Sans Bold
-      fonts:
+      fonts: 
         - asset: fonts/Work Sans/WorkSans-Bold.ttf
 
   #
